@@ -24,11 +24,16 @@ android {
         }
     }
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+        buildConfig true
     }
 }
 
@@ -39,12 +44,28 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
+
+    //retrofit for network calls
     implementation libs.converter.gson
     implementation libs.retrofit
 
+    //compose
     implementation libs.ui
     implementation libs.ui.tooling
     implementation libs.material.compose
+
+    //hilt
+    implementation libs.dagger
+    implementation libs.dagger.complier
+
+    //paging-compose
+    implementation libs.paging.compose
+    implementation libs.paging.runtime
+
+    //jackson support kotlin types
+    implementation libs.jackson.module
+
+    coreLibraryDesugaring libs.desugar
     
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
