@@ -17,7 +17,7 @@ sealed class SearchResult {
         val id: String,
         val title: String,
         val owner: String,
-        val trackCount: Int,
+        val trackCount: String,
         val imageUrl: String? = null
     ) : SearchResult()
 
