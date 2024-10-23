@@ -24,8 +24,6 @@ sealed class SearchResult {
     data class Artist(
         val id: String,
         val name: String,
-        val owner: String,
-        val trackCount: String,
         val imageUrl: String? = null
     ) : SearchResult()
 

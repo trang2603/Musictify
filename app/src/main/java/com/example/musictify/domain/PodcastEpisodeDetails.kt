@@ -38,10 +38,8 @@ data class PodcastEpisodeDetails(
     )
 }
 
-fun PodcastEpisodeDetails.formatDateAndDuration(context: Context): String =
-    generateMusictifyDateANdDuration(
-
-    )
+fun PodcastEpisodeDetails.getFormattedDateAndDuration(context: Context): String =
+    getFormattedEpisodeReleaseDateAndDuration()
 
 fun PodcastEpisodeDetails?.isEqualIgnoreImageSize(other: PodcastEpisodeDetails?) : Boolean {
     if(other == null || this == null) return false
